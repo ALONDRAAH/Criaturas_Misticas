@@ -1,66 +1,80 @@
-
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <a href="/index.html">index</a>
-  <title>Registro de Aventureros</title>
-  <style>
-    body {
+    <a href="/index.html">index</a>
+    <title>Registro de Aventureros</title>
+    <style>
+      body {
         font-family: Arial, sans-serif;
         text-align: center;
-        background-color: #f0f8ff; /* Color de fondo suave */
+        background-color: #f0f8ff;
         padding: 20px;
-    }
-    form {
+      }
+      form {
         display: inline-block;
         margin-top: 20px;
         border: 1px solid #ccc;
         padding: 20px;
         border-radius: 10px;
-        background-color: #fff; /* Fondo blanco para el formulario */
-    }
-    input, select {
+        background-color: #fff;
+      }
+      input,
+      select {
         margin: 10px 0;
         padding: 10px;
         width: 200px;
         border: 1px solid #ccc;
         border-radius: 5px;
-    }
-    button {
+      }
+      button {
         padding: 10px 15px;
-        background-color: #4CAF50;
+        background-color: #4caf50;
         color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-    }
-    button:hover {
-        background-color: #45a049; /* Efecto al pasar el mouse */
-    }
-  </style>
-</head>
-<body>
-  <h1>Registro de Nuevos Aventureros</h1>
-  <form action="/submit" method="post">
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br>
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Registro de Nuevos Aventureros</h1>
+    <form action="/submit" method="post">
+      <label for="nombre">Nombre:</label><br />
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        required
+        minlength="1"
+        maxlength="30"
+      /><br />
 
-    <label for="edad">Edad:</label><br>
-    <input type="number" id="edad" name="edad" min="1" required><br>
+      <label for="edad">Edad:</label><br />
+      <input
+        type="number"
+        id="edad"
+        name="edad"
+        max="10000"
+        min="1"
+        required
+      /><br />
 
-    <label for="criatura">Selecciona tu criatura mística:</label><br>
-    <select id="criatura" name="criatura" required>
-      <option value="">Seleccione...</option>
-      <option value="dragon">Dragón</option>
-      <option value="pegaso">Pegaso</option>
-      <option value="sirena">Sirena</option>
-      <option value="elfo">Elfo</option>
-    </select><br>
+      <label for="criatura">Selecciona tu criatura mística:</label><br />
+      <select id="criatura" name="criatura" required>
+        <option value="">Seleccione...</option>
+        <option value="dragon">Dragón</option>
+        <option value="pegaso">Pegaso</option>
+        <option value="sirena">Sirena</option>
+        <option value="elfo">Elfo</option></select
+      ><br />
 
-    <button type="submit">Registrarse</button>
-  </form>
-</body>
+      <button type="submit">Registrarse</button>
+    </form>
+  </body>
 </html>
