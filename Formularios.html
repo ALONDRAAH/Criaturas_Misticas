@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <a href="/index.html">index</a>
     <title>Registro de Aventureros</title>
     <style>
       body {
@@ -44,24 +42,17 @@
   </head>
   <body>
     <h1>Registro de Nuevos Aventureros</h1>
-    <form action="/submit" method="post">
+    <form id="registroForm">
       <label for="nombre">Nombre:</label><br />
-      <input
-        type="text"
-        id="nombre"
-        name="nombre"
-        required
-        minlength="1"
-        maxlength="30"
-      /><br />
+      <input type="text" id="nombre" name="nombre" required /><br />
 
       <label for="edad">Edad:</label><br />
       <input
         type="number"
         id="edad"
         name="edad"
-        max="10000"
         min="1"
+        max="10000"
         required
       /><br />
 
@@ -76,5 +67,22 @@
 
       <button type="submit">Registrarse</button>
     </form>
+
+    <script>
+      document
+        .getElementById("registroForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const nombre = document.getElementById("nombre").value;
+          const edad = document.getElementById("edad").value;
+          const criatura = document.getElementById("criatura").value;
+
+          console.log("Formulario enviado:", { nombre, edad, criatura });
+          this.reset();
+
+          alert("Registro exitoso!");
+        });
+    </script>
   </body>
 </html>
